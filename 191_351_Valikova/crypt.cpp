@@ -11,6 +11,7 @@
 #include <QTemporaryFile>
 #include <openssl/aes.h>
 #include <QBuffer>
+#include <QTextStream>
 
 
 crypt::crypt(QObject *parent) : QObject(parent)
@@ -119,6 +120,25 @@ QString crypt:: decryptpassword(){
     QString str="";
     file.open(QIODevice::ReadOnly |QIODevice::Text);
     str = file.readAll();
-
     return str;
+}
+
+void crypt::deletepasswd(){
+    QFile file("C:/exam/191_351_Valikova/file/1.txt");
+    file.close();
+    if(file.open(QIODevice::ReadWrite | QIODevice::Text))
+    {
+        QString s;
+        QTextStream t(&file);
+        while(!t.atEnd())
+        {
+            QString line = t.readLine();
+            if(!line.contains("DELETE"))
+                s.append(line + "\n");
+        }
+        file.resize(0);
+        t << s;
+        file.close();
+    }
+
 }

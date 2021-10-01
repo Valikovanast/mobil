@@ -60,7 +60,9 @@ Page {
             id: btnexit
             text: qsTr("Выход")
             Layout.alignment: Qt.AlignCenter
-            onClicked: swipeView.currentIndex = 0
+            onClicked:{
+            crypt.deletepasswd();
+            swipeView.currentIndex = 0}
 
 
             contentItem: Text {
