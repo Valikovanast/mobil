@@ -4,5 +4,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>Page1Form.qml</file>
         <file>Page2Form.qml</file>
+        <file>file/1.txt</file>
     </qresource>
 </RCC>

@@ -11,6 +11,7 @@ import QtWebSockets 1.1
 
 Page {
     id:page1
+
     background: Rectangle{
         color: "lightgrey"}
     header: Rectangle {
@@ -56,9 +57,11 @@ Page {
                 id: btnin
                 text: qsTr("Вход")
                 Layout.alignment: Qt.AlignCenter
-                onClicked:// {crypt.encriptpassword(password)
-                    //if (crypt.encriptpassword(password) === true){
-                     main.push(Qt.resolvedUrl("Page2Form.qml"))
+                onClicked: {crypt.encriptpassword(password)
+                    if (crypt.encriptpassword(password) === true){
+                          swipeView.currentIndex = 1
+                    }
+                }
 
 
                 contentItem: Text {

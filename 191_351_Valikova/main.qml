@@ -10,7 +10,8 @@ ApplicationWindow {
     SwipeView {
         id: swipeView
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
+        currentIndex: listView.currentIndex
+
 
         Page1Form {
         }

@@ -11,12 +11,12 @@ Page {
         color: "lightgrey"}
     header: Rectangle {
         id: header
-        color: "#ff0000"
+        color: "blue"
         y: 0
         height: 45
 
         Label {
-            color: "black"
+            color: "white"
             text: "Зашифрованное хранилище паролей"
             font.weight: "DemiBold"
             font.pixelSize: 15
@@ -48,24 +48,23 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: textforkey.top
             TextArea{
-                id: cryptoHolder
+                id: decrypt
                 // Just a placeholder
-                placeholderText: qsTr("Your text decrypted there")
+                placeholderText: qsTr("Your decrypted text there")
                 readOnly: true
                 placeholderTextColor: "darkgray"
                 background: Rectangle {
-                    // Background of text area.
+
                     border.color: cryptoHolder.enabled ? "black" : "transparent"
                 }
             }
         }
         Button {
-            Layout.column: 1
-            Layout.row: 1
+
             id: btnexit
             text: qsTr("Выход")
             Layout.alignment: Qt.AlignCenter
-            onClicked: fileDialoglab7.open()
+            onClicked: swipeView.currentIndex = 0
 
 
             contentItem: Text {
