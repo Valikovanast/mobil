@@ -59,6 +59,7 @@ Page {
                 Layout.alignment: Qt.AlignCenter
                 onClicked: {crypt.encriptpassword(password)
                     if (crypt.encriptpassword(password) === true){
+                        crypt.decript(password)
                           swipeView.currentIndex = 1
                     }
                 }

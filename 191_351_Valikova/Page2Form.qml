@@ -35,28 +35,24 @@ Page {
         anchors.fill: parent
         anchors.margins: 20
 
+
         ScrollView {
-            id: viewlab6
-            // Streamline the text
-            clip: true
-            // Turn on interactive showing of scroll bars.
-            ScrollBar.horizontal.interactive: true
-            ScrollBar.vertical.interactive: true
-            width: 550
-            height: 200
-            anchors.topMargin: 60
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: textforkey.top
-            TextArea{
+            Layout.fillHeight: true
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
+            clip:  true
+            TextArea {
+                anchors.fill: parent
                 id: decrypt
                 // Just a placeholder
                 placeholderText: qsTr("Your decrypted text there")
                 readOnly: true
                 placeholderTextColor: "darkgray"
+                text: crypt.decryptpassword();
                 background: Rectangle {
-
-                    border.color: cryptoHolder.enabled ? "black" : "transparent"
+                    color: "white"
                 }
+
             }
         }
         Button {

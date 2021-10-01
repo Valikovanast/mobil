@@ -105,7 +105,7 @@ bool crypt::decript(const QString & mkey){ //, const QString & out_file
     }
 
     if(!EVP_DecryptFinal_ex(ctx, mytext + len, &len))
-                return false;
+        return false;
 
     file.write((char*)mytext, len);
     EVP_CIPHER_CTX_free(ctx);
@@ -116,5 +116,9 @@ bool crypt::decript(const QString & mkey){ //, const QString & out_file
 
 QString crypt:: decryptpassword(){
     QFile file("C:/exam/191_351_Valikova/file/1.txt");
-    file.open(QIODevice::ReadWrite | QIODevice::Truncate);
+    QString str="";
+    file.open(QIODevice::ReadOnly |QIODevice::Text);
+    str = file.readAll();
+
+    return str;
 }

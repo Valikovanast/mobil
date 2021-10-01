@@ -21,6 +21,7 @@ ApplicationWindow {
     }
 
     footer: TabBar {
+        visible: false
         id: tabBar
         currentIndex: swipeView.currentIndex
 
