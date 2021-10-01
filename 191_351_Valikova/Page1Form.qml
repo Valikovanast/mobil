@@ -57,10 +57,8 @@ Page {
                 id: btnin
                 text: qsTr("Вход")
                 Layout.alignment: Qt.AlignCenter
-                onClicked: {
+                onClicked: {crypt.encriptpassword(password);crypt.decript(password);
                     if (crypt.encriptpassword(password) === true){
-                          crypt.encriptpassword(password);
-                          crypt.decript(password);
                           swipeView.currentIndex = 1
                     }
                 }
