@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Page1.qml</file>
+        <file>Page2.qml</file>
+        <file>image/polytech.png</file>
+        <file>image/1.png</file>
+        <file>image/img.png</file>
+        <file>image/3.png</file>
+    </qresource>
+</RCC>
